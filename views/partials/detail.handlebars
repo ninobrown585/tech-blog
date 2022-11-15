@@ -1,0 +1,17 @@
+<div class="card bg-dark m-3">
+  <a class="text-white" href="/post/{{id}}" class="card-link">
+    <h2 class="card-header">{{title}}</h2>
+  </a>
+  <div class="card-body">
+    <h5 class="card-title text-white">Post by: {{user.username}} on {{format_date date_created}}</h5>
+    <p class="card-text text-white">{{content}}</p>
+  </div>
+  {{#each post.comments as |comment|}}
+  <div class='media'>
+    <div class='media-body text-right'>
+      <p>Comment posted by: {{user.username}} on {{format_date created_at}}</p>
+      <h6>{{comment.comment}}</h6>
+    </div>
+  </div>
+  {{/each}}
+</div>
