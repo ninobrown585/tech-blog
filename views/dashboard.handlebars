@@ -1,0 +1,21 @@
+<div class="card bg-dark m-3 text-white">
+    <h1 class="pl-2 mb-4">Dashboard</h1>
+    <div class="border-bottom">
+        <a href='/dashboard/newentry'><button id='create-entry' class='btn btn-light mb-2 ml-2 border-bottom'>Create New
+                Entry</button></a>
+    </div>
+    {{#if posts.length}}
+    <div>
+        <h3 class="mt-1 ml-2">
+            Your post history:
+        </h3>
+
+        <div>
+            {{#each posts as |post|}}
+            {{> detail post }}
+            <a href='/dashboard/edit/{{post.id}}'><button class='btn ml-2 mb-2'>Edit</button>
+                {{/each}}
+        </div>
+    </div>
+    {{/if}}
+</div>
